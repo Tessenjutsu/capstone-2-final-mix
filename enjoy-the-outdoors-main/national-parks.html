@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>National Parks Search</title>
+  </head>
+  <body>
+    <h1>National Parks Search Page</h1>
+    <div id="search-container">
+      <label for="locationDropdown">Search by Location:</label>
+      <select id="locationDropdown">
+        <option value="">Select a State/Territory</option>
+      </select>
+      <label for="parkTypeDropdown">Search by Park Type:</label>
+      <select id="parkTypeDropdown">
+        <option value="">Select a Park Type</option>
+      </select>
+      <button id="searchButton">Search</button>
+    </div>
+    <table class="table mt-3">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Address</th>
+          <th>City</th>
+          <th>State</th>
+          <th>Zip</th>
+          <th>Phone</th>
+          <th>Website</th>
+        </tr>
+      </thead>
+      <tbody id="parkTBody">
+        <!-- Table rows will be inserted here -->
+      </tbody>
+    </table>
+    <script src="scripts/locationData.js"></script>
+    <script src="scripts/parkTypeData.js"></script>
+    <script src="scripts/nationalParkData.js"></script>
+    <script src="scripts/national-parks.js"></script>
+  </body>
+</html>
