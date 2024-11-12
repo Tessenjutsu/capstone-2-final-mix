@@ -9,7 +9,7 @@
     <h1>National Parks Search Page</h1>
     <div id="search-container">
       <label for="locationDropdown">Search by Location:</label>
-      <select id="locationDropdown">
+      <select id="locationDropdown" onchange="loadParks()">
         <option value="">Select a State/Territory</option>
       </select>
       <label for="parkTypeDropdown">Search by Park Type:</label>

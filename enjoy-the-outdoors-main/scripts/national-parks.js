@@ -3,8 +3,12 @@ const locationDropdown = document.getElementById("locationDropdown");
 const parkTypeDropdown = document.getElementById("parkTypeDropdown");
 const parkTBody = document.getElementById("parkTBody");
 
-function loadparks() {
-  for (const park of nationalParksArray) {
+function loadParks() { 
+  let selectedLocationName = locationDropdown.value;
+  let filteredNationalParksArray = nationalParksArray.filter((park)=> park.State = selectedLocationName)
+  parkTBody.innerHTML = ""
+
+  for (const park of filteredNationalParksArray) {
     const row = document.createElement("tr");
 
     const nameCell = document.createElement("td");
@@ -39,7 +43,7 @@ function loadparks() {
   }
   console.log(locationDropdown, parkTypeDropdown, parkTBody);
 }
-loadparks();
+loadParks();
 
 function getParks() {
   for (const park of parkTypesArray) {
@@ -62,3 +66,4 @@ function getStates (){
 }
 
 getStates();
+
