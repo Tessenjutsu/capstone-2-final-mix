@@ -41,11 +41,24 @@ function loadparks() {
 }
 loadparks();
 
-function loadtypes() {
+function getParks() {
   for (const park of parkTypesArray) {
-    const row = document.createElement("tr");
-    const typeCell = document.createElement("td")
-    typeCell.innerText = park.Type 
-    row.appendChild(row)
+    let option = document.createElement("option");
+    option.value = park;
+    option.innerText = park;
+    parkTypeDropdown.appendChild(option);
   }
 }
+
+getParks();
+
+function getStates (){
+  for (const park of locationsArray){
+    let option = document.createElement("option")
+    option.value = park;
+    option.innerText = park;
+    locationDropdown.appendChild(option);
+  }
+}
+
+getStates();
