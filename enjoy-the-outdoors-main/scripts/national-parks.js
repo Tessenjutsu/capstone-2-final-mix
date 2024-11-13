@@ -4,9 +4,21 @@ const parkTypeDropdown = document.getElementById("parkTypeDropdown");
 const parkTBody = document.getElementById("parkTBody");
 
 function loadParks() { 
-  let selectedLocationName = locationDropdown.value;
-  let filteredNationalParksArray = nationalParksArray.filter((park)=> park.State = selectedLocationName)
   parkTBody.innerHTML = ""
+  let filteredNationalParksArray = nationalParksArray
+
+  let selectedLocationName = locationDropdown.value; 
+  if (selectedLocationName) {
+    parkTypeDropdown.value = ""
+    filteredNationalParksArray = nationalParksArray.filter((park)=> park.State == selectedLocationName)
+  }
+
+  let selectedParkType = parkTypeDropdown.value; 
+  
+  if (selectedParkType) {
+    locationDropdown.value = ""
+    filteredNationalParksArray = nationalParksArray.filter((park)=> park.LocationName.includes(selectedParkType))
+  }
 
   for (const park of filteredNationalParksArray) {
     const row = document.createElement("tr");
@@ -45,7 +57,8 @@ function loadParks() {
 }
 loadParks();
 
-function getParks() {
+function getParkTypes() {
+
   for (const park of parkTypesArray) {
     let option = document.createElement("option");
     option.value = park;
@@ -54,7 +67,7 @@ function getParks() {
   }
 }
 
-getParks();
+getParkTypes();
 
 function getStates (){
   for (const park of locationsArray){

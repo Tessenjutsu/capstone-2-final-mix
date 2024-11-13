@@ -5,10 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mountains</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.classless.min.css" />
   </head>
+  <header>
+    <h1 style="text-align: center;">Mountain Information</h1>
+  </header>
   <body>
-    <main>
-      
+    <main class="container mt-4">
+      <section aria-labelledby="select-mountain">
+        <label for="mountainDropdown">Select a Mountain:</label>
+        <select id="mountainDropdown">
+          <option value="">-- Select --</option>
+        </select>
+      </section>
+
     </main>
     <script src="./scripts/mountainData.js"></script>
     <script src="./scripts/mountains.js"></script>
